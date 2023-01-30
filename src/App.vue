@@ -1,24 +1,26 @@
 <template>
   <div id="app">
     <header>
-      <van-search
+      <!-- <van-search
         v-model="value"
         show-action
         @search="onSearch">
         <div slot="action" @click="onSearch">搜索</div>
-      </van-search>
+      </van-search> -->
     </header>
     <router-view></router-view>
     <footer>
       <van-tabbar v-model="active">
-        <van-tabbar-item icon="hot">
+        <van-tabbar-item>
           <router-link tag="div" class="tab-item" to="/moiveIndex">
-            <span>热映</span>
+            <i class="iconfont">&#xe605;</i>
+            <span>交易</span>
           </router-link>
         </van-tabbar-item>
-        <van-tabbar-item icon="wap-nav">
+        <van-tabbar-item>
           <router-link tag="div" class="tab-item" to="/ranking">
-            <span>排行</span>
+            <i class="iconfont">&#xe6c0;</i>
+            <span>公告</span>
           </router-link>
         </van-tabbar-item>
         <van-tabbar-item icon="contact">
@@ -44,18 +46,19 @@ export default {
     [TabbarItem.name]: TabbarItem,
     [Search.name]: Search
   },
-  data(){
-    return{
+  data() {
+    return {
       active: 0,
-      value:''
-    }
+      value: ''
+    };
   },
-  methods:{
-    onSearch(){
-      console.log(this.value)
+  methods: {
+    onSearch() {
+      console.log(this.value);
     }
   }
-}
+};
+
 </script>
 
 <style>
@@ -65,5 +68,11 @@ body {
 
 .van-cell__title .van-icon {
   font-size: 18px;
+}
+.iconfont {
+  display: block;
+  font-size: 18px;
+  margin:0 auto 5px;
+  text-align: center;
 }
 </style>
